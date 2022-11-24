@@ -6,7 +6,7 @@ import Image from 'next/image'
 // const https = require('https');
 
 const gallery = ({ res }) => {
-  const STRAPI_BASEURL = 'http://localhost:1337'
+  const STRAPI_BASEURL = 'https://tashielectronicsbackend.tashicell.com'
 
   return (
     <div className="container mx-auto space-y-2 lg:space-y-0 lg:gap-2 lg:grid lg:grid-cols-3 px-10 pt-5">
@@ -30,7 +30,7 @@ export async function getStaticProps() {
   // const agent = new https.Agent({
   //   rejectUnauthorized: false
   // });
-  const datas = await fetch('http://localhost:1337/api/galleries?populate=*'
+  const datas = await fetch('https://tashielectronicsbackend.tashicell.com/api/galleries?populate=*'
   // ,{
   //   method: 'GET',
   //   agent

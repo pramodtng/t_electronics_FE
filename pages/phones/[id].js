@@ -4,7 +4,7 @@ import parse from 'html-react-parser'
 import Link  from 'next/link';
 
 const Phones = ({ post }) => {
-  const STRAPI_BASEURL = 'http://localhost:1337'
+  const STRAPI_BASEURL = 'https://tashielectronicsbackend.tashicell.com'
   const [showModal, setShowModal] = useState(false);
   return (
 
@@ -147,7 +147,7 @@ const Phones = ({ post }) => {
 export default Phones
 
 export async function getStaticProps({ params }) {
-  const posts = await fetch(`http://localhost:1337/api/phones/${params.id}?populate=*`)
+  const posts = await fetch(`https://tashielectronicsbackend.tashicell.com/api/phones/${params.id}?populate=*`)
   const res = await posts.json()
   return {
     props: {
@@ -157,7 +157,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await fetch('http://localhost:1337/api/phones?populate=*')
+  const posts = await fetch('https://tashielectronicsbackend.tashicell.com/api/phones?populate=*')
   const res = await posts.json()
   const paths = res.data.map((post) => {
     return {

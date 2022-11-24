@@ -48,10 +48,10 @@ const phones = ({ selling, phones, flagship,latest }) => {
 export default phones
 
 export async function getStaticProps() {
-  const sellingPhones  = await fetch('http://localhost:1337/api/phones?filters[category][$eq]=selling&populate=*')
-  const flagshipPhones  = await fetch('http://localhost:1337/api/phones?filters[category][$eq]=flagship&populate=*')
-  const latestPhones  = await fetch('http://localhost:1337/api/phones?filters[category][$eq]=latest&populate=*')
-  const allphones  = await fetch('http://localhost:1337/api/phones?populate=*')
+  const sellingPhones  = await fetch('https://tashielectronicsbackend.tashicell.com/api/phones?filters[category][$eq]=selling&populate=*')
+  const flagshipPhones  = await fetch('https://tashielectronicsbackend.tashicell.com/api/phones?filters[category][$eq]=flagship&populate=*')
+  const latestPhones  = await fetch('https://tashielectronicsbackend.tashicell.com/api/phones?filters[category][$eq]=latest&populate=*')
+  const allphones  = await fetch('https://tashielectronicsbackend.tashicell.com/api/phones?populate=*')
   const selling = await sellingPhones.json()
   const phones = await allphones.json()
   const flagship = await flagshipPhones.json()

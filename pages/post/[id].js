@@ -7,7 +7,7 @@ import dayjs from 'dayjs'
 
 
 const Posts = ({ post }) => {
-  const STRAPI_BASEURL = 'http://localhost:1337'
+  const STRAPI_BASEURL = 'https://tashielectronicsbackend.tashicell.com'
 
   return (
     <div className=" mx-auto dark:text-gray-100">
@@ -36,7 +36,7 @@ export async function getStaticProps({ params }) {
   // const agent = new https.Agent({
   //   rejectUnauthorized: false
   // });
-  const posts = await fetch(`http://localhost:1337/api/posts/${params.id}?populate=*`
+  const posts = await fetch(`https://tashielectronicsbackend.tashicell.com/api/posts/${params.id}?populate=*`
   // , {
   //   method: 'GET',
   //   agent
@@ -54,7 +54,7 @@ export async function getStaticPaths() {
   // const agent = new https.Agent({
   //   rejectUnauthorized: false
   // });
-  const posts = await fetch('http://localhost:1337/api/posts?populate=*'
+  const posts = await fetch('https://tashielectronicsbackend.tashicell.com/api/posts?populate=*'
   // , {
   //   method: 'GET',
   //   agent
