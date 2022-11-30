@@ -2,10 +2,17 @@
 import React, { useState } from 'react'
 import parse from 'html-react-parser'
 import Link  from 'next/link';
+import { useRouter } from 'next/router'
+
 
 const Phones = ({ post }) => {
   const STRAPI_BASEURL = 'https://tashielectronicsbackend.tashicell.com'
   const [showModal, setShowModal] = useState(false);
+	const router = useRouter()
+    if (router.isFallback) {
+    return <div>Loading...</div>
+  }
+	
   return (
 
     <div className="md:flex items-start justify-center py-6 2xl:px-20 md:px-6 px-4 shadow-lg rounded-lg border-black">
@@ -152,7 +159,8 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       post: res.data
-    }
+    },
+	  revalidate: 60
   }
 }
 
@@ -166,6 +174,6 @@ export async function getStaticPaths() {
   })
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
