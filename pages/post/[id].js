@@ -3,11 +3,16 @@ import React from 'react'
 import parse from 'html-react-parser'
 import dayjs from 'dayjs'
 // const https = require('https');
+import { useRouter } from 'next/router'
 
 
 
 const Posts = ({ post }) => {
   const STRAPI_BASEURL = 'https://tashielectronicsbackend.tashicell.com'
+  const router = useRouter()
+    if (router.isFallback) {
+    return <div>Loading...</div>
+  }
 
   return (
     <div className=" mx-auto dark:text-gray-100">
@@ -33,33 +38,18 @@ export default Posts
 
 
 export async function getStaticProps({ params }) {
-  // const agent = new https.Agent({
-  //   rejectUnauthorized: false
-  // });
-  const posts = await fetch(`https://tashielectronicsbackend.tashicell.com/api/posts/${params.id}?populate=*`
-  // , {
-  //   method: 'GET',
-  //   agent
-  // }
-  )
+  const posts = await fetch(`https://tashielectronicsbackend.tashicell.com/api/posts/${params.id}?populate=*`)
   const res = await posts.json()
   return {
     props: {
       post: res.data
-    }
+    },
+    revalidate: 60
   }
 }
 
 export async function getStaticPaths() {
-  // const agent = new https.Agent({
-  //   rejectUnauthorized: false
-  // });
-  const posts = await fetch('https://tashielectronicsbackend.tashicell.com/api/posts?populate=*'
-  // , {
-  //   method: 'GET',
-  //   agent
-  // }
-  )
+  const posts = await fetch('https://tashielectronicsbackend.tashicell.com/api/posts?populate=*')
   const res = await posts.json()
   const paths = res.data.map((post) => {
     return {
@@ -68,6 +58,6 @@ export async function getStaticPaths() {
   })
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
