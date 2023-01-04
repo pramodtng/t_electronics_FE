@@ -6,14 +6,15 @@ import { useRouter } from 'next/router';
 
 
 const Phones = ({ post }) => {
+  console.log(JSON.stringify(post.id))
   const router = useRouter()
   const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
   const [showModal, setShowModal] = useState(false);
   if (router.isFallback) {
     <h2>Data loading</h2>
   }
-  return (
 
+  return (
     <div className="md:flex items-start justify-center py-6 2xl:px-20 md:px-6 px-4 shadow-lg rounded-lg border-black">
       <Link href="/phones">
         <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -158,6 +159,6 @@ export async function getStaticPaths() {
   })
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }

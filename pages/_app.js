@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import "../styles/globals.css";
-import "../styles/ckeditor.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "../components/Footer";

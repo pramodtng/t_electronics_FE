@@ -3,11 +3,16 @@ import React from 'react'
 import parse from 'html-react-parser'
 import dayjs from 'dayjs'
 // const https = require('https');
+import { useRouter } from 'next/router'
 
 
 
 const Posts = ({ post }) => {
   const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
+  const router = useRouter()
+    if (router.isFallback) {
+    return <div>Loading...</div>
+  }
 
   return (
     <div className=" mx-auto dark:text-gray-100">
@@ -38,7 +43,8 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       post: res.data
-    }
+    },
+    revalidate: 60
   }
 }
 
@@ -52,6 +58,6 @@ export async function getStaticPaths() {
   })
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
