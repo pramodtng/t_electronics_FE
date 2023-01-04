@@ -1,47 +1,56 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react'
 import parse from 'html-react-parser'
-import Link  from 'next/link';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 
 const Phones = ({ post }) => {
-  const STRAPI_BASEURL = 'https://tashielectronicsbackend.tashicell.com'
+  const router = useRouter()
+  const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
   const [showModal, setShowModal] = useState(false);
+  if (router.isFallback) {
+    <h2>Data loading</h2>
+  }
   return (
 
     <div className="md:flex items-start justify-center py-6 2xl:px-20 md:px-6 px-4 shadow-lg rounded-lg border-black">
-      <Link href= "/phones">
+      <Link href="/phones">
         <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
-            </svg>
-      </button>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
+        </button>
       </Link>
-      
+
       <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
         <img className="w-full" alt="img of a girl posing" src={`${STRAPI_BASEURL + post.attributes.image.data.attributes.url}`} />
+        <div className="flex justify-center">
+          <div className="block rounded-lg shadow-lg bg-white max-w-sm text-center">
+            <div className="py-3 px-6 border border-xl border-gray-300 text-xl">
+              Nu. {parseInt(post.attributes.sellingPrice - post.attributes.discPrice)}.00 /-
+            </div>
+            <div className="p-6">
+              <h5 className="text-gray-900 text-2xl font-medium mb-2">Freebies</h5>
+              <div className="phonedetail-modal text-black-700 text-base mb-4">
+                {
+                  parse(post.attributes.freebies)
+                }
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="md:hidden">
         <img className="w-full" alt="img of a girl posing" src={`${STRAPI_BASEURL + post.attributes.image.data.attributes.url}`} />
       </div>
-      <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
+      <div className="xl:w-3/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
         <div className="border-b border-gray-200 pb-6">
-          <h1
-            className="
-							lg:text-2xl
-							text-xl
-							font-semibold
-							lg:leading-6
-							leading-7
-							text-gray-800
-							mt-2
-						"
-          >
+          <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 mt-2">
             {post.attributes.title}
           </h1>
         </div>
-        <button
-          className="
-						focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800
+        <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800
 						text-base
 						flex
 						items-center
@@ -99,37 +108,19 @@ const Phones = ({ post }) => {
                     </h2>
                     <div className="flex flex-wrap">
                       <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
+                        {parse(post.attributes.availability.data.attributes.babesa)}
+                      </div>
+                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
+                        {parse(post.attributes.availability.data.attributes.jungshina)}
+                      </div>
+                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
+                        {parse(post.attributes.availability.data.attributes.mlcp)}
+                      </div>
+                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
+                        {parse(post.attributes.availability.data.attributes.phuentsholing)}
+                      </div>
+                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
                         {parse(post.attributes.availability.data.attributes.thimphu)}
-                      </div>
-                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-                        {parse(post.attributes.availability.data.attributes.paro)}
-                      </div>
-                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-                        {parse(post.attributes.availability.data.attributes.phuntsholing)}
-                      </div>
-                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-                        {parse(post.attributes.availability.data.attributes.samtse)}
-                      </div>
-                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-                        {parse(post.attributes.availability.data.attributes.bumthang)}
-                      </div>
-                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-                        {parse(post.attributes.availability.data.attributes.gelephu)}
-                      </div>
-                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-                        {parse(post.attributes.availability.data.attributes.mongar)}
-                      </div>
-                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-                        {parse(post.attributes.availability.data.attributes.samdrupjongkhar)}
-                      </div>
-                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-                        {parse(post.attributes.availability.data.attributes.trashigang)}
-                      </div>
-                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-                        {parse(post.attributes.availability.data.attributes.tsirang)}
-                      </div>
-                      <div className="phonedetail-modal w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-                        {parse(post.attributes.availability.data.attributes.wangdue)}
                       </div>
                     </div>
                   </section>
@@ -147,17 +138,18 @@ const Phones = ({ post }) => {
 export default Phones
 
 export async function getStaticProps({ params }) {
-  const posts = await fetch(`https://tashielectronicsbackend.tashicell.com/api/phones/${params.id}?populate=*`)
+  const posts = await fetch(`https://backend.tashielectronics.com/api/phones/${params.id}?populate=*`)
   const res = await posts.json()
   return {
     props: {
       post: res.data
-    }
+    },
+    revalidate: 60
   }
 }
 
 export async function getStaticPaths() {
-  const posts = await fetch('https://tashielectronicsbackend.tashicell.com/api/phones?populate=*')
+  const posts = await fetch('https://backend.tashielectronics.com/api/phones?populate=*')
   const res = await posts.json()
   const paths = res.data.map((post) => {
     return {

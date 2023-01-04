@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 
 const news = ({ posts }) => {
-  const STRAPI_BASEURL = 'https://tashielectronicsbackend.tashicell.com'
+  const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
   return (
     <div className="container mt-5 px-6 mx-auto bg-[#f8f9f1]">
       <section className="mb-10 text-center">
@@ -51,7 +51,7 @@ export async function getStaticProps() {
   // const agent = new https.Agent({
   //   rejectUnauthorized: false
   // });
-  const results = await fetch('https://tashielectronicsbackend.tashicell.com/api/posts?populate=*'
+  const results = await fetch('https://backend.tashielectronics.com/api/posts?populate=*'
   // , {
   //   method: 'GET',
   //   agent

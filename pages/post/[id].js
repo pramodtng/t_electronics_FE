@@ -7,7 +7,7 @@ import dayjs from 'dayjs'
 
 
 const Posts = ({ post }) => {
-  const STRAPI_BASEURL = 'https://tashielectronicsbackend.tashicell.com'
+  const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
 
   return (
     <div className=" mx-auto dark:text-gray-100">
@@ -20,7 +20,7 @@ const Posts = ({ post }) => {
               <a rel="noopener noreferrer" href="#" className="text-xs hover:underline"> {dayjs(post.attributes.createdAt).format("MMMM DD, YYYY")} </a>
             </p>
           </div>
-          <div className="dark:text-black-100">
+          <div className="prose lg:prose-xl">
             {parse(post.attributes.content)}
           </div>
         </div>
@@ -33,15 +33,7 @@ export default Posts
 
 
 export async function getStaticProps({ params }) {
-  // const agent = new https.Agent({
-  //   rejectUnauthorized: false
-  // });
-  const posts = await fetch(`https://tashielectronicsbackend.tashicell.com/api/posts/${params.id}?populate=*`
-  // , {
-  //   method: 'GET',
-  //   agent
-  // }
-  )
+  const posts = await fetch(`https://backend.tashielectronics.com/api/posts/${params.id}?populate=*`)
   const res = await posts.json()
   return {
     props: {
@@ -51,15 +43,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  // const agent = new https.Agent({
-  //   rejectUnauthorized: false
-  // });
-  const posts = await fetch('https://tashielectronicsbackend.tashicell.com/api/posts?populate=*'
-  // , {
-  //   method: 'GET',
-  //   agent
-  // }
-  )
+  const posts = await fetch('https://backend.tashielectronics.com/api/posts?populate=*')
   const res = await posts.json()
   const paths = res.data.map((post) => {
     return {

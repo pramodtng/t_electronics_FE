@@ -4,8 +4,11 @@ import "../styles/ckeditor.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "../components/Footer";
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
+import { QueryClientProvider, QueryClient } from "react-query";
 
+
+const queryClient = new QueryClient()
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -17,7 +20,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Navbar />
-      <Component {...pageProps} />
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
       <Footer />
     </>
   );

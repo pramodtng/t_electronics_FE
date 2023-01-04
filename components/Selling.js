@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-children-prop */
-import React, { useState } from 'react'
-import ReactMarkdown from 'react-markdown'
+import React from 'react'
 import Link from 'next/link'
 
 const Selling = ({ sell }) => {
-  const STRAPI_BASEURL = 'https://tashielectronicsbackend.tashicell.com'
+  const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
   return (
     <div className='bg-white'>
       <div className='mx-auto max-w-2xl py-2 px-4 sm:px-6 lg:max-w-7xl lg:px-4'>
@@ -25,7 +24,7 @@ const Selling = ({ sell }) => {
                   <h2>Nu. {datas.attributes.discPrice} </h2>
                   <div className='flex flex-row justify-between items-center p-1'>
                     <h2 className='line-through' >Nu. {datas.attributes.sellingPrice} </h2>
-                    <h2 className='border-2 p-1'>Nu. {parseInt(datas.attributes.sellingPrice - datas.attributes.discPrice)}  </h2>
+                    <h2 className='border-2 p-1'>Save Nu. {parseInt(datas.attributes.sellingPrice - datas.attributes.discPrice)}  </h2>
                   </div>
                   <div className='flex flex-row justify-center p-5'>
                     <Link href={`phones/${datas.id}`}>

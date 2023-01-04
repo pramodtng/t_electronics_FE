@@ -15,17 +15,16 @@ const SocialMedias = () => {
 
         <div className="flex flex-wrap -mx-4">
           <div className="w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-
+            <iframe src="https://twitter.com/SamsungBhutan" frameBorder="0"></iframe>
           </div>
 
           <div className="w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-            
+            <iframe src="https://twitter.com/SamsungBhutan" frameBorder="0"></iframe>
           </div>
 
           <div className="w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
-           
+            <iframe src="https://twitter.com/SamsungBhutan" frameBorder="0"></iframe>
           </div>
-
         </div>
       </section>
     </div>
