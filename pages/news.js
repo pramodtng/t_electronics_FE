@@ -47,7 +47,7 @@ const news = ({ posts }) => {
 
 export default news
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // const agent = new https.Agent({
   //   rejectUnauthorized: false
   // });

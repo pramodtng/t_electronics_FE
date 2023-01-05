@@ -1,8 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import Logo from "./Logo";
 import NavItem from "./NavItem";
-import Image from 'next/image';
+import Image from "next/image";
 
 const MENU_LIST = [
   { text: "About Us", href: "/about" },
@@ -20,7 +19,7 @@ const Navbar = () => {
     <header>
       <nav className={`nav`}>
         <Link href="/">
-          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+          {/* <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="70.000000pt" height="50.000000pt" viewBox="0 0 1080.000000 763.000000"
             preserveAspectRatio="xMidYMid meet">
 
@@ -56,7 +55,13 @@ l-11 32 -139 0 c-103 0 -141 -3 -144 -12z m184 -519 c34 -136 61 -249 61 -253
 208 -704 374 -100 95 -151 160 -205 261 -187 347 -159 788 84 1331 29 65 49
 118 45 118 -5 0 -28 -23 -53 -50z"/>
             </g>
-          </svg>
+          </svg> */}
+          <Image 
+            src= "/tashi-logo.png" 
+            alt = "logo"
+            height={30}
+            width = {120}
+          />
         </Link>
         <div
           onClick={() => setNavActive(!navActive)}

@@ -21,10 +21,10 @@ const Selling = ({ sell }) => {
                     />
                   </div>
                   <h2 className='text-center p-5'> {datas.attributes.title} </h2>
-                  <h2>Nu. {datas.attributes.discPrice} </h2>
-                  <div className='flex flex-row justify-between items-center p-1'>
-                    <h2 className='line-through' >Nu. {datas.attributes.sellingPrice} </h2>
-                    <h2 className='border-2 p-1'>Save Nu. {parseInt(datas.attributes.sellingPrice - datas.attributes.discPrice)}  </h2>
+                  <h2 className='text-purple-800 text-lg'>Nu. {datas.attributes.discPrice.toLocaleString()} </h2>
+                  <div className='flex flex-row justify-between items-center'>
+                    <h3 className='line-through text-purple-800' >Nu. {datas.attributes.sellingPrice.toLocaleString()} </h3>
+                    <h5 className='border-2 p-1 bg-orange-400 rounded-lg animate-pulse text-sm'>Save Nu. {parseInt(datas.attributes.sellingPrice - datas.attributes.discPrice).toLocaleString()} </h5>
                   </div>
                   <div className='flex flex-row justify-center p-5'>
                     <Link href={`phones/${datas.id}`}>

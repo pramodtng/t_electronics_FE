@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import SocialMedias from "../components/SocialMedias";
 import Phones from './../components/Phones';
 
 
@@ -85,7 +84,6 @@ export default function Home() {
         </div>
       </div>
       <Phones />
-      {/* <SocialMedias /> */}
     </>
   );
 }

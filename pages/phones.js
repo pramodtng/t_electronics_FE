@@ -46,7 +46,7 @@ const phones = ({ selling, phones, flagship,latest }) => {
 
 export default phones
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const sellingPhones  = await fetch('https://backend.tashielectronics.com/api/phones?filters[category][$eq]=selling&populate=*')
   const flagshipPhones  = await fetch('https://backend.tashielectronics.com/api/phones?filters[category][$eq]=flagship&populate=*')
   const latestPhones  = await fetch('https://backend.tashielectronics.com/api/phones?filters[category][$eq]=latest&populate=*')

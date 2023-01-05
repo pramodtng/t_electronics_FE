@@ -26,7 +26,7 @@ const gallery = ({ res }) => {
 
 export default gallery
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const datas = await fetch('https://backend.tashielectronics.com/api/galleries?populate=*')
   const res = await datas.json();
   return {

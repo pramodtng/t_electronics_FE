@@ -72,7 +72,7 @@ const Contact = () => {
       <section className="text-gray-600 body-font relative">
         <div className="absolute inset-0 bg-gray-300">
           <iframe width="100%" height="100%" frameBorder="0" marginHeight="0" marginWidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSzDnWRaU4TkROJeSPhToeZw&key=AIzaSyBhGEpDDn0daNsXT682u_dLB30qiM6AuSk"></iframe>
-          <iframe width="100%" height="100%" frameBorder="0" marginHeight="0" marginWidth="0" title="map" scrolling="no" src=""></iframe>
+          {/* <iframe width="100%" height="100%" frameBorder="0" marginHeight="0" marginWidth="0" title="map" scrolling="no" src=""></iframe> */}
         </div>
         <form onSubmit={handleSubmit}>
           <div className="container px-5 py-24 mx-auto flex">

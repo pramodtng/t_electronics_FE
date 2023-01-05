@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 
 
 const Phones = ({ post }) => {
-  console.log(JSON.stringify(post.id))
   const router = useRouter()
   const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
   const [showModal, setShowModal] = useState(false);
@@ -29,7 +28,7 @@ const Phones = ({ post }) => {
         <div className="flex justify-center">
           <div className="block rounded-lg shadow-lg bg-white max-w-sm text-center">
             <div className="py-3 px-6 border border-xl border-gray-300 text-xl">
-              Nu. {parseInt(post.attributes.sellingPrice - post.attributes.discPrice)}.00 /-
+              Nu. {parseInt(post.attributes.sellingPrice - post.attributes.discPrice).toLocaleString()}/-
             </div>
             <div className="p-6">
               <h5 className="text-gray-900 text-2xl font-medium mb-2">Freebies</h5>
@@ -138,7 +137,7 @@ const Phones = ({ post }) => {
 
 export default Phones
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const posts = await fetch(`https://backend.tashielectronics.com/api/phones/${params.id}?populate=*`)
   const res = await posts.json()
   return {
@@ -159,6 +158,6 @@ export async function getStaticPaths() {
   })
   return {
     paths,
-    fallback: true
+    fallback: false
   }
 }

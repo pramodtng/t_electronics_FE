@@ -70,7 +70,7 @@ const Phones = () => {
               </div>
             </div>
           </div>
-          <div className="text-gray-900 bg-gray-100">
+          {/* <div className="text-gray-900 bg-gray-100">
             <section className="flex flex-col justify-center max-w-6xl px-4 mx-auto sm:px-6">
               <div className="flex flex-wrap items-center justify-center mb-8">
                 <h2 className="mr-10 text-4xl font-bold leading-none md:text-5xl text-center">
@@ -93,7 +93,7 @@ const Phones = () => {
                 </div>
               </div>
             </section>
-          </div>
+          </div> */}
         </div>
       </section>
 

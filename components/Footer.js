@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
 import React from 'react'
-import Link  from 'next/link';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
     <footer aria-label="Site Footer" className="bg-[#ffffff]">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           <div>
             <h2 className="mt-4 max-w-xs text-xl text-gray-500">
               Tashi Electronics
@@ -81,11 +81,11 @@ const Footer = () => {
             <div>
               <p className="font-medium">Company</p>
               <div aria-label="Footer Nav" className="mt-4 flex flex-col space-y-2 text-sm text-gray-500">
-                <Link href= "/about" className="hover:opacity-75">
+                <Link href="/about" className="hover:opacity-75">
                   About
                 </Link>
-                <Link href= "https://jobs.tashicell.com/" className="hover:opacity-75">
-                  <a target = "_blank">Career</a>                  
+                <Link href="https://jobs.tashicell.com/" className="hover:opacity-75">
+                  <a target="_blank">Career</a>
                 </Link>
               </div>
             </div>
@@ -93,14 +93,14 @@ const Footer = () => {
             <div>
               <p className="font-medium">Helpful Links</p>
               <div className="mt-4 flex flex-col space-y-2 text-sm text-gray-500">
-                <Link href= "/contact" className="hover:opacity-75">
-                  <a target = "_blank">Contact</a>                  
+                <Link href="/contact" className="hover:opacity-75">
+                  <a target="_blank">Contact</a>
                 </Link>
-                <Link href= "https://www.samsung.com/us/smartphones/" className="hover:opacity-75">
-                  <a target = "_blank">Samsung Phones</a>                  
+                <Link href="https://www.samsung.com/us/smartphones/" className="hover:opacity-75">
+                  <a target="_blank">Samsung Phones</a>
                 </Link>
-                <Link href= "https://www.tashicell.com/" className="hover:opacity-75">
-                  <a target = "_blank">TashiCell</a>
+                <Link href="https://www.tashicell.com/" className="hover:opacity-75">
+                  <a target="_blank">TashiCell</a>
                 </Link>
               </div>
             </div>
@@ -112,6 +112,9 @@ const Footer = () => {
                 <a className="hover:opacity-75" href=""> Terms & Conditions </a>
               </div>
             </div>
+          </div>
+          <div>
+            <iframe width="100%" height="100%" frameBorder="0" marginHeight="0" marginWidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSzDnWRaU4TkROJeSPhToeZw&key=AIzaSyBhGEpDDn0daNsXT682u_dLB30qiM6AuSk"></iframe>
           </div>
         </div>
 
