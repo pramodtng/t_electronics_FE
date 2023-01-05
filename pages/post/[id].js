@@ -37,7 +37,7 @@ const Posts = ({ post }) => {
 export default Posts
 
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const posts = await fetch(`https://backend.tashielectronics.com/api/posts/${params.id}?populate=*`)
   const res = await posts.json()
   return {

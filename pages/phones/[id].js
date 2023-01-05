@@ -137,7 +137,7 @@ const Phones = ({ post }) => {
 
 export default Phones
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const posts = await fetch(`https://backend.tashielectronics.com/api/phones/${params.id}?populate=*`)
   const res = await posts.json()
   return {
