@@ -22,7 +22,7 @@ const Retailers = ({ datas }) => {
               getOptionValue={datas => datas.id}
               options={datas}
               instanceId="dzongkhags"
-              placeholder="Filter by Dzongkhags"
+              placeholder="Filter by Dzongkhag"
               onChange={values => handleDzongkhagsChange(values)}
             />
           </div>
@@ -70,7 +70,7 @@ export default Retailers
 
 
 export async function getServerSideProps() {
-  const res = await fetch('https://backend.tashielectronics.com/api/dzongkhags?populate=*'
+  const res = await fetch('https://admin.tashielectronics.com/api/dzongkhags?populate=*'
   )
   const data = await res.json();
   return {

@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 
 const Phones = ({ post }) => {
   const router = useRouter()
-  const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
+  const STRAPI_BASEURL = 'https://admin.tashielectronics.com'
   const [showModal, setShowModal] = useState(false);
   if (router.isFallback) {
     <h2>Data loading</h2>
@@ -138,7 +138,7 @@ const Phones = ({ post }) => {
 export default Phones
 
 export async function getStaticProps({ params }) {
-  const posts = await fetch(`https://backend.tashielectronics.com/api/phones/${params.id}?populate=*`)
+  const posts = await fetch(`https://admin.tashielectronics.com/api/phones/${params.id}?populate=*`)
   const res = await posts.json()
   return {
     props: {
@@ -149,7 +149,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await fetch('https://backend.tashielectronics.com/api/phones?populate=*')
+  const posts = await fetch('https://admin.tashielectronics.com/api/phones?populate=*')
   const res = await posts.json()
   const paths = res.data.map((post) => {
     return {

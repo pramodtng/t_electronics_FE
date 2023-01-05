@@ -6,7 +6,7 @@ import Image from 'next/image'
 // const https = require('https');
 
 const gallery = ({ res }) => {
-  const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
+  const STRAPI_BASEURL = 'https://admin.tashielectronics.com'
 
   return (
     <div className="container mx-auto space-y-2 lg:space-y-0 lg:gap-2 lg:grid lg:grid-cols-3 px-10 pt-5">
@@ -27,7 +27,7 @@ const gallery = ({ res }) => {
 export default gallery
 
 export async function getServerSideProps() {
-  const datas = await fetch('https://backend.tashielectronics.com/api/galleries?populate=*')
+  const datas = await fetch('https://admin.tashielectronics.com/api/galleries?populate=*')
   const res = await datas.json();
   return {
     props: {

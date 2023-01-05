@@ -47,10 +47,10 @@ const phones = ({ selling, phones, flagship,latest }) => {
 export default phones
 
 export async function getServerSideProps() {
-  const sellingPhones  = await fetch('https://backend.tashielectronics.com/api/phones?filters[category][$eq]=selling&populate=*')
-  const flagshipPhones  = await fetch('https://backend.tashielectronics.com/api/phones?filters[category][$eq]=flagship&populate=*')
-  const latestPhones  = await fetch('https://backend.tashielectronics.com/api/phones?filters[category][$eq]=latest&populate=*')
-  const allphones  = await fetch('https://backend.tashielectronics.com/api/phones?populate=*')
+  const sellingPhones  = await fetch('https://admin.tashielectronics.com/api/phones?filters[category][$eq]=selling&populate=*')
+  const flagshipPhones  = await fetch('https://admin.tashielectronics.com/api/phones?filters[category][$eq]=flagship&populate=*')
+  const latestPhones  = await fetch('https://admin.tashielectronics.com/api/phones?filters[category][$eq]=latest&populate=*')
+  const allphones  = await fetch('https://admin.tashielectronics.com/api/phones?populate=*')
   const selling = await sellingPhones.json()
   const phones = await allphones.json()
   const flagship = await flagshipPhones.json()

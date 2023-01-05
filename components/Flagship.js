@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 
 const Flagship = ({ flag }) => {
-  const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
+  const STRAPI_BASEURL = 'https://admin.tashielectronics.com'
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl py-2 px-4 sm:px-6 lg:max-w-7xl lg:px-4">

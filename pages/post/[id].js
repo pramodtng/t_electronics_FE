@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 
 
 const Posts = ({ post }) => {
-  const STRAPI_BASEURL = 'https://backend.tashielectronics.com'
+  const STRAPI_BASEURL = 'https://admin.tashielectronics.com'
   const router = useRouter()
     if (router.isFallback) {
     return <div>Loading...</div>
@@ -38,7 +38,7 @@ export default Posts
 
 
 export async function getStaticProps({ params }) {
-  const posts = await fetch(`https://backend.tashielectronics.com/api/posts/${params.id}?populate=*`)
+  const posts = await fetch(`https://admin.tashielectronics.com/api/posts/${params.id}?populate=*`)
   const res = await posts.json()
   return {
     props: {
@@ -49,7 +49,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await fetch('https://backend.tashielectronics.com/api/posts?populate=*')
+  const posts = await fetch('https://admin.tashielectronics.com/api/posts?populate=*')
   const res = await posts.json()
   const paths = res.data.map((post) => {
     return {
