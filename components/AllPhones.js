@@ -12,7 +12,7 @@ const AllPhones = ({ phones }) => {
             phones.data.map(function (datas) {
               return (
                 <div key={datas.id} className="group relative p-5 shadow-lg">
-                  <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ...">
+                  <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:aspect-none lg:h-80 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ...">
                     <img
                       src={`${STRAPI_BASEURL + datas.attributes.image.data.attributes.url}`}
                       alt={datas.attributes.image.data.attributes.caption}
