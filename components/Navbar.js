@@ -24,6 +24,7 @@ const Navbar = () => {
             alt = "logo"
             height={30}
             width = {120}
+            className = 'rounded-lg'
           />
         </Link>
         <div

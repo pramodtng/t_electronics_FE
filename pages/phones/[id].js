@@ -23,18 +23,105 @@ const Phones = ({ post }) => {
         </button>
       </Link>
 
-      <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-        <img className="w-full" alt="img of a girl posing" src={`${STRAPI_BASEURL + post.attributes.image.data.attributes.url}`} />
+      <div className="xl:w-2/6 lg:w-2/5 w-80">
+        <img className="w-full" alt="phone" src={`${STRAPI_BASEURL + post.attributes.image.data.attributes.url}`} />
         <div className="flex justify-center">
           <div className="block rounded-lg shadow-lg bg-white max-w-sm text-center">
-            <div className="py-3 px-6 border border-xl border-gray-300 text-xl">
-              Nu. {parseInt(post.attributes.sellingPrice - post.attributes.discPrice).toLocaleString()}/-
+            <div className="py-3 px-6 border border-xl border-gray-300 text-xl p-4">
+              Nu. {post.attributes.discPrice.toLocaleString()}/-
             </div>
             <div className="p-6">
               <h5 className="text-gray-900 text-2xl font-medium mb-2">Freebies</h5>
               <div className="phonedetail-modal text-black-700 text-base mb-4">
                 {
-                  parse(post.attributes.freebies)
+                  parseInt(post.attributes.sellingPrice - post.attributes.discPrice) > 30000 ? (
+                    <div className="flex flex-col">
+                      <div className="overflow-x-auto">
+                        <div className="py-4 inline-block min-w-full">
+                          <div className="overflow-hidden">
+                            <table className="min-w-full text-center">
+                              <thead className="border-b bg-gray-800">
+                                <tr>
+                                  <th colSpan={2} className='text-white'>Diamond Package</th>
+                                </tr>
+                                <tr>
+                                  <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                    Particulars
+                                  </th>
+                                  <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                    Monthly
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr className="bg-white border-b">
+                                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Data Allowance
+                                  </td>
+                                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    19,170MB
+                                  </td>
+                                </tr>
+                                <tr className="bg-white border-b">
+                                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Talk Time
+                                  </td>
+                                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    N/A
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <h4 className='p-2'>FREE: S Pen and Cover</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                    : (
+
+                      <div className="flex flex-col">
+                        <div className="overflow-x-auto">
+                          <div className="py-4 inline-block min-w-full">
+                            <div className="overflow-hidden">
+                              <table className="min-w-full text-center">
+                                <thead className="border-b bg-gray-800">
+                                  <tr>
+                                    <th colSpan={2} className='text-white'>Diamond Package</th>
+                                  </tr>
+                                  <tr>
+                                    <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                      Particulars
+                                    </th>
+                                    <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                      Monthly
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr className="bg-white border-b">
+                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                      Data Allowance
+                                    </td>
+                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                      3,000 MB
+                                    </td>
+                                  </tr>
+                                  <tr className="bg-white border-b">
+                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                      Talk Time
+                                    </td>
+                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                      Nu. 150
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
                 }
               </div>
             </div>
