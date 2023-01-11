@@ -72,7 +72,6 @@ const Contact = () => {
       <section className="text-gray-600 body-font relative">
         <div className="absolute inset-0 bg-gray-300">
           <iframe width="100%" height="100%" frameBorder="0" marginHeight="0" marginWidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSzDnWRaU4TkROJeSPhToeZw&key=AIzaSyBhGEpDDn0daNsXT682u_dLB30qiM6AuSk"></iframe>
-          {/* <iframe width="100%" height="100%" frameBorder="0" marginHeight="0" marginWidth="0" title="map" scrolling="no" src=""></iframe> */}
         </div>
         <form onSubmit={handleSubmit}>
           <div className="container px-5 py-24 mx-auto flex">
@@ -134,8 +133,8 @@ const Contact = () => {
         </form>
 
       </section>
-      <section className="relative pt-12 pb-12 bg-white overflow-hidden">
-        <div className="relative z-10 container px-4 mx-auto">
+      {/* <section className="relative pt-12 pb-12 bg-white overflow-hidden">
+        <div className="relative z-10 container px-6 mx-auto">
           <h2 className="mb-5 text-4xl md:text-xl xl:text-5xl text-center font-bold font-heading tracking-px-n leading-none">Get connected</h2>
           <div className="flex flex-wrap -m-1 px-16">
             <div className="w-full md:w-1/3 p-3">
@@ -148,7 +147,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <h3 className="mb-3 text-xl font-bold font-heading leading-snug">Send Email</h3>
-                <p className="font-medium leading-relaxed">samsungbhutan@tashielectronics.com</p>
+                <p className="font-medium max-w-xs mx-auto leading-relaxed">samsungbhutan@tashielectronics.com</p>
               </div>
             </div>
             <div className="w-full md:w-1/3 p-3">
@@ -184,7 +183,182 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>  */}
+      <div className="flex flex-wrap">
+        <div className="relative w-full md:w-1/3 p-4">
+          <input type="checkbox" id="card1" className="hidden" />
+            <div className="relative rounded-lg overflow-hidden transform hover:scale-105">
+              <img src="https://images.unsplash.com/photo-1529408686214-b48b8532f72c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=986e2dee5c1b488d877ad7ba1afaf2ec&auto=format&fit=crop&w=1350&q=80" alt="Cozy apartment" className="w-full" />
+                <div className="absolute bottom-0 m-4 p-4 bg-white">
+                  <h2 className="text-lg font-medium">Cozy apartment</h2>
+                  <div className="flex items-center">
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="far fa-star text-gray-500 mr-1"></i>
+                  </div>
+                  <label htmlFor="card1" className="block font-medium text-indigo-600 hover:text-indigo-800">Details</label>
+                </div>
+            </div>
+            <div className="absolute top-0 left-0 m-4 p-4 bg-white w-full">
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">5</span>
+                <div className="flex items-center">
+                  <i className="fas fa-users mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">people</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">4</span>
+                <div className="flex items-center">
+                  <i className="fas fa-door-open mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">rooms</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">3</span>
+                <div className="flex items-center">
+                  <i className="fas fa-bed mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">beds</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">1</span>
+                <div className="flex items-center">
+                  <i className="fas fa-bath mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">bath</span>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, accusamus.</p>
+                <p className="text-gray-700">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates earum nostrum ipsam ullam, reiciendis nam consectetur? Doloribus voluptate architecto possimus perferendis tenetur nemo amet temporibus, enim soluta nam, debitis.</p>
+              </div>
+              <div className="mt-4 text-gray-500">Warsaw, Poland</div>
+              <div className="mt-4 text-gray-500">38€ / day</div>
+              <label htmlFor="card1" className="block font-medium text-indigo-600 hover:text-indigo-800">
+                <i className="fas fa-arrow-left mr-1"></i>
+                Return
+              </label>
+            </div>
+        </div>
+        <div className="relative w-full md:w-1/3 p-4">
+          <input type="checkbox" id="card2" className="hidden" />
+            <div className="relative rounded-lg overflow-hidden transform hover:scale-105">
+              <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c02fb96f9cfc16d3649835b75d1b2033&auto=format&fit=crop&w=1350&q=80" alt="Modern flat" className="w-full" />
+                <div className="absolute bottom-0 m-4 p-4 bg-white">
+                  <h2 className="text-lg font-medium">Modern flat</h2>
+                  <div className="flex items-center">
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="far fa-star text-gray-500 mr-1"></i>
+                  </div>
+                  <label htmlFor="card2" className="block font-medium text-indigo-600 hover:text-indigo-800">Details</label>
+                </div>
+            </div>
+            <div className="absolute top-0 left-0 m-4 p-4 bg-white w-full">
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">3</span>
+                <div className="flex items-center">
+                  <i className="fas fa-users mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">people</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">2</span>
+                <div className="flex items-center">
+                  <i className="fas fa-door-open mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">rooms</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">2</span>
+                <div className="flex items-center">
+                  <i className="fas fa-bed mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">beds</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">1</span>
+                <div className="flex items-center">
+                  <i className="fas fa-bath mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">bath</span>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, accusamus.</p>
+                <p className="text-gray-700">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates earum nostrum ipsam ullam, reiciendis nam consectetur? Doloribus voluptate architecto possimus perferendis tenetur nemo amet temporibus, enim soluta nam, debitis.</p>
+              </div>
+              <div className="mt-4 text-gray-500">New York, USA</div>
+              <div className="mt-4 text-gray-500">78€ / day</div>
+              <label htmlFor="card2" className="block font-medium text-indigo-600 hover:text-indigo-800">
+                <i className="fas fa-arrow-left mr-1"></i>
+                Return
+              </label>
+            </div>
+        </div>
+        <div className="relative w-full md:w-1/3 p-4">
+          <input type="checkbox" id="card3" className="hidden" />
+            <div className="relative rounded-lg overflow-hidden transform hover:scale-105">
+              <img src="https://images.unsplash.com/photo-1566394304833-f5f0680a6b91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury villa" className="w-full" />
+                <div className="absolute bottom-0 m-4 p-4 bg-white">
+                  <h2 className="text-lg font-medium">Luxury villa</h2>
+                  <div className="flex items-center">
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                    <i className="fas fa-star text-orange-500 mr-1"></i>
+                  </div>
+                  <label htmlFor="card3" className="block font-medium text-indigo-600 hover:text-indigo-800">Details</label>
+                </div>
+            </div>
+            <div className="absolute top-0 left-0 m-4 p-4 bg-white w-full">
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">8</span>
+                <div className="flex items-center">
+                  <i className="fas fa-users mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">people</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">7</span>
+                <div className="flex items-center">
+                  <i className="fas fa-door-open mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">rooms</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">6</span>
+                <div className="flex items-center">
+                  <i className="fas fa-bed mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">beds</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl mr-2">4</span>
+                <div className="flex items-center">
+                  <i className="fas fa-bath mr-1 text-gray-500"></i>
+                  <span className="text-gray-500">baths</span>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, accusamus.</p>
+                <p className="text-gray-700">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates earum nostrum ipsam ullam, reiciendis nam consectetur? Doloribus voluptate architecto possimus perferendis tenetur nemo amet temporibus, enim soluta nam, debitis.</p>
+              </div>
+              <div className="mt-4 text-gray-500">Barcelona, Spain</div>
+              <div className="mt-4 text-gray-500">150€ / day</div>
+              <label htmlFor="card3" className="block font-medium text-indigo-600 hover:text-indigo-800">
+                <i className="fas fa-arrow-left mr-1"></i>
+                Return
+              </label>
+            </div>
+        </div>
+      </div>
+
+
     </>
   );
 };

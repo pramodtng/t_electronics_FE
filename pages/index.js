@@ -37,30 +37,30 @@ export default function Home() {
                 src="/image_13.JPG"
                 className="block w-full h-96 object-cover"
                 alt="..." />
-              <div className="carousel-caption hidden md:block absolute text-center">
+              {/* <div className="carousel-caption hidden md:block absolute text-center">
                 <h5 className="text-xl">First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>
-              </div>
+              </div> */}
             </div>
             <div className="carousel-item relative float-left w-full">
               <img
                 src="/image_25.jpg"
                 className="block w-full h-96 object-cover"
                 alt="..." />
-              <div className="carousel-caption hidden md:block absolute text-center">
+              {/* <div className="carousel-caption hidden md:block absolute text-center">
                 <h5 className="text-xl">Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p>
-              </div>
+              </div> */}
             </div>
             <div className="carousel-item relative float-left w-full">
               <img
                 src="/image_26.jpg"
                 className="block w-full h-96 object-cover"
                 alt="..." />
-              <div className="carousel-caption hidden md:block absolute text-center">
+              {/* <div className="carousel-caption hidden md:block absolute text-center">
                 <h5 className="text-xl">Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
-              </div>
+              </div> */}
             </div>
           </div>
           <button
